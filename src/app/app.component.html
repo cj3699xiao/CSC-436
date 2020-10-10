@@ -1,5 +1,14 @@
 <h2>Welcome {{title}}</h2>
 
-<p>OS: Windows without WSL
+<form>
+ <input (click) = "recalc()" id = "lhs" type = "number" [(ngModel)]="lhs" name = "lhs">
+  <select [(ngModel)] = "operator" (click) = "recalc()" name = "operator">
+    <option value = "+"> + </option>
+    <option value = "-"> - </option>
+    <option value = "*"> * </option>
+    <option value = "/"> / </option>
+  </select>
+  <input (click) = "recalc()" id = "rhs" type = "number" [(ngModel)]="rhs" name = "rhs">
+</form>
 
-<p>IDE: VS
+{{lhs}}{{operator}}{{rhs}} = {{result}}
