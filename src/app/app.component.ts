@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string = 'Calculator';
+  title:string = 'Travel Cost Calculator';
 
   lhs:number = 0;
   rhs:number = 0;
@@ -32,5 +32,16 @@ export class AppComponent {
       this.result = this.lhs / this.rhs;
     }
   }
+
+  oriAirport: string = "Your Origin";
+  desAirport: string = "Your destination";
+  date: number = 0;
+  travelers: number = 0;
+  cost: number = 0;
+
+  travelCost(): void {
+    this.cost = this.travelers * 150;
+  }
+
 }
 

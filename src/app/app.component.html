@@ -1,6 +1,6 @@
-<h2>Welcome {{title}}</h2>
+<h2>Welcome Visitor, the stage is: {{title}}</h2>
 
-<form>
+<!-- <form>
  <input (click) = "recalc()" id = "lhs" type = "number" [(ngModel)]="lhs" name = "lhs">
   <select [(ngModel)] = "operator" (click) = "recalc()" name = "operator">
     <option value = "+"> + </option>
@@ -11,4 +11,26 @@
   <input (click) = "recalc()" id = "rhs" type = "number" [(ngModel)]="rhs" name = "rhs">
 </form>
 
-{{lhs}}{{operator}}{{rhs}} = {{result}}
+{{lhs}}{{operator}}{{rhs}} = {{result}} -->
+
+<p>Origin | Destination | number of tickets | take off after days</p>
+<form>
+   <select [(ngModel)] = "oriAirport" name = "oriAirport">
+     <option value = "ORD"> ORD </option>
+     <option value = "CDC"> CDC </option>
+     <option value = "WTF"> WTF </option>
+     <option value = "OMG"> OMG </option>
+   </select>
+   <select [(ngModel)] = "desAirport" name = "desAirport">
+    <option value = "ORD"> ORD </option>
+    <option value = "CDC"> CDC </option>
+    <option value = "WTF"> WTF </option>
+    <option value = "OMG"> OMG </option>
+  </select>
+   <input id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
+   <input id = "date" type = "number" [(ngModel)] = "date" name = "date">
+   <button type = "button" (click) = "travelCost()"> Submit </button>
+ </form>
+
+
+ <p> From {{oriAirport}} to {{desAirport}}, take off {{date}}  days later with {{travelers}} people. Your total cost is $ {{cost}} </p>
