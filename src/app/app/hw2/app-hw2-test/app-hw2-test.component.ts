@@ -18,6 +18,12 @@ export class AppHw2TestComponent implements OnInit {
 
   public addnewTask() {
     if(this.newTask === '') {
+    } else if (this.newTask === '0101') {
+      this.items.push("Hi Ken, is that you ? I knew it XD !!");
+      this.newTask = '';
+    } else if (this.newTask === '941104') {
+      this.items.push("老婆，我爱你");
+      this.newTask = '';
     } else {
       this.items.push(this.newTask);
       this.newTask = '';
