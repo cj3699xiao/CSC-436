@@ -12,4 +12,20 @@ export class AppHw2TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public items = [];
+
+  public newTask;
+
+  public addnewTask() {
+    if(this.newTask === '') {
+    } else {
+      this.items.push(this.newTask);
+      this.newTask = '';
+    }
+  }
+
+  public deleteTask(index) {
+    this.items.splice(index, 1);
+  }
+
 }
