@@ -1,4 +1,8 @@
-<h2>Welcome Visitor, the stage is: {{title}}</h2>
+<div class="container-fluid">
+
+<h2 style="text-align:center;" >Welcome Visitor, the stage is: {{title}}</h2>
+
+<br>
 
 <!-- <form>
  <input (click) = "recalc()" id = "lhs" type = "number" [(ngModel)]="lhs" name = "lhs">
@@ -13,8 +17,9 @@
 
 {{lhs}}{{operator}}{{rhs}} = {{result}} -->
 
-<p>Origin | Destination | number of tickets | take off after days</p>
-<form>
+
+<p style="text-align:center;">Origin | Destination | number of tickets | take off after days</p>
+<form style="text-align:center;">
    <select [(ngModel)] = "oriAirport" name = "oriAirport">
      <option value = "ORD"> ORD </option>
      <option value = "CDC"> CDC </option>
@@ -27,10 +32,17 @@
     <option value = "WTF"> WTF </option>
     <option value = "OMG"> OMG </option>
   </select>
+   <input id = "date" type = "date" [(ngModel)] = "date" name = "date">
    <input id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
-   <input id = "date" type = "number" [(ngModel)] = "date" name = "date">
-   <button type = "button" (click) = "travelCost()"> Submit </button>
+
  </form>
 
+  <br>
 
- <p> From {{oriAirport}} to {{desAirport}}, take off {{date}}  days later with {{travelers}} people. Your total cost is $ {{cost}} </p>
+ <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "travelCost()"> Submit </button>
+
+ <br>
+
+ <p style="text-align:center;"> From {{oriAirport}} to {{desAirport}}, take off at {{date}} , with {{travelers}} people. Your total cost is <span class="font-weight-bold" style="color : brown">$ {{cost}} </span> </p>
+
+ </div>

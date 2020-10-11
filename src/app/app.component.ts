@@ -35,7 +35,7 @@ export class AppComponent {
 
   oriAirport: string = "Your Origin";
   desAirport: string = "Your destination";
-  date: number = 0;
+  date: Date;
   travelers: number = 0;
   cost: number = 0;
 
