@@ -18,23 +18,31 @@
 {{lhs}}{{operator}}{{rhs}} = {{result}} -->
 
 
-<p style="text-align:center;">Origin | Destination | number of tickets | take off after days</p>
 <form style="text-align:center;">
-   <select [(ngModel)] = "oriAirport" name = "oriAirport">
+  <div class = "form-group row">
+    <div class = "col">Origin
+   <select class = "form-control" [(ngModel)] = "oriAirport" name = "oriAirport">
      <option value = "ORD"> ORD </option>
      <option value = "CDC"> CDC </option>
      <option value = "WTF"> WTF </option>
      <option value = "OMG"> OMG </option>
    </select>
-   <select [(ngModel)] = "desAirport" name = "desAirport">
+   </div>
+   <div class = "col">Destination
+   <select class = "form-control" [(ngModel)] = "desAirport" name = "desAirport">
     <option value = "ORD"> ORD </option>
     <option value = "CDC"> CDC </option>
     <option value = "WTF"> WTF </option>
     <option value = "OMG"> OMG </option>
   </select>
-   <input id = "date" type = "date" [(ngModel)] = "date" name = "date">
-   <input id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
-
+  </div>
+  <div class = "col">Number of tickets
+   <input class = "form-control" id = "date" type = "date" [(ngModel)] = "date" name = "date">
+  </div>
+   <div class = "col">Date
+   <input class = "form-control" id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
+  </div>
+  </div>
  </form>
 
   <br>
