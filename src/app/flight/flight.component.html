@@ -1,0 +1,34 @@
+<form style="text-align:center;">
+  <div class = "form-group row">
+    <div class = "col">Origin
+   <select class = "form-control" [(ngModel)] = "oriAirport" name = "oriAirport">
+     <option value = "ORD"> ORD </option>
+     <option value = "CDC"> CDC </option>
+     <option value = "WTF"> WTF </option>
+     <option value = "OMG"> OMG </option>
+   </select>
+   </div>
+   <div class = "col">Destination
+   <select class = "form-control" [(ngModel)] = "desAirport" name = "desAirport">
+    <option value = "ORD"> ORD </option>
+    <option value = "CDC"> CDC </option>
+    <option value = "WTF"> WTF </option>
+    <option value = "OMG"> OMG </option>
+  </select>
+  </div>
+  <div class = "col">Date
+   <input class = "form-control" id = "date" type = "date" [(ngModel)] = "date" name = "date">
+  </div>
+   <div class = "col">Number of tickets
+   <input class = "form-control" id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
+  </div>
+  </div>
+ </form>
+
+  <br>
+
+ <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "travelCost()"> Submit </button>
+
+ <br>
+
+ <p style="text-align:center;"> From {{oriAirport}} to {{desAirport}}, take off at {{date}} , with {{travelers}} people. Your total cost is <span class="font-weight-bold" style="color : brown">$ {{cost}} </span> </p>

@@ -1,58 +1,41 @@
 <div class="container-fluid">
 
-<h2 style="text-align:center;" >Welcome Visitor, the stage is: {{title}}</h2>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" style="font-weight: bold">CSC 436 - Yuchen Xiao</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li style="padding-left: 30%;" class="nav-item active">
+          <a class="nav-link" [routerLink] = '' (click)="aboutToggle()" >In@About<span class="sr-only">(current)</span></a>
+        </li>
+        <li style="padding-left: 30%;" class="nav-item">
+          <a class="nav-link" [routerLink]="['/flight']">Flight</a>
+        </li>
 
-<br>
+        <li style="padding-left: 30%;" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            DropDown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" [routerLink]="['/lineC']">Line</a>
+            <a class="dropdown-item" [routerLink]="['/barC']">Bar</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
 
-<!-- <form>
- <input (click) = "recalc()" id = "lhs" type = "number" [(ngModel)]="lhs" name = "lhs">
-  <select [(ngModel)] = "operator" (click) = "recalc()" name = "operator">
-    <option value = "+"> + </option>
-    <option value = "-"> - </option>
-    <option value = "*"> * </option>
-    <option value = "/"> / </option>
-  </select>
-  <input (click) = "recalc()" id = "rhs" type = "number" [(ngModel)]="rhs" name = "rhs">
-</form>
-
-{{lhs}}{{operator}}{{rhs}} = {{result}} -->
-
-
-<form style="text-align:center;">
-  <div class = "form-group row">
-    <div class = "col">Origin
-   <select class = "form-control" [(ngModel)] = "oriAirport" name = "oriAirport">
-     <option value = "ORD"> ORD </option>
-     <option value = "CDC"> CDC </option>
-     <option value = "WTF"> WTF </option>
-     <option value = "OMG"> OMG </option>
-   </select>
-   </div>
-   <div class = "col">Destination
-   <select class = "form-control" [(ngModel)] = "desAirport" name = "desAirport">
-    <option value = "ORD"> ORD </option>
-    <option value = "CDC"> CDC </option>
-    <option value = "WTF"> WTF </option>
-    <option value = "OMG"> OMG </option>
-  </select>
-  </div>
-  <div class = "col">Date
-   <input class = "form-control" id = "date" type = "date" [(ngModel)] = "date" name = "date">
-  </div>
-   <div class = "col">Number of tickets
-   <input class = "form-control" id = "travelers" type = "number" [(ngModel)] = "travelers" name = "travelers">
-  </div>
-  </div>
- </form>
-
-  <br>
-
- <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "travelCost()"> Submit </button>
-
- <br>
-
- <p style="text-align:center;"> From {{oriAirport}} to {{desAirport}}, take off at {{date}} , with {{travelers}} people. Your total cost is <span class="font-weight-bold" style="color : brown">$ {{cost}} </span> </p>
-
- <app-app-hw2-test style="text-align:center;" ></app-app-hw2-test>
-
- </div>
+        <li style="padding-left: 30%;" class="nav-item">
+          <a class="nav-link" [routerLink]="['/about']" [host]="runningOs">About</a>
+        </li>
+        <li style="padding-left: 30%;" class="nav-item">
+          <a class="nav-link" [routerLink]="['/todo']">ToDo</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <app-about [host]="runningOs" *ngIf="displayAbout"></app-about>
+  <router-outlet ></router-outlet>
+</div>
