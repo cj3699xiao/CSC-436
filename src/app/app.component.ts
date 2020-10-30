@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  runningOs = environment.runningOS;
+  runningOs:string = environment.runningOS;
   displayAbout = false;
 
   aboutToggle() {
